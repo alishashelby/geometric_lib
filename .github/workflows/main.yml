@@ -1,7 +1,8 @@
 name: CI
 
 on: 
-  [push]
+  push:
+    branches: ["new_features_409892"]
 
 jobs:
   unittests_job:
