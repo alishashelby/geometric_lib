@@ -1,11 +1,11 @@
 name: CI
 
-on:
+on: 
   [push]
 
 jobs:
   unittests_job:
-    name: unittests_job${{matrix.os}}
+    name: unittests_job${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -15,8 +15,6 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v3
         with:
-          python-version: 3
+          python-version: '3.10'
       - name: Run unittests
-        run: python3 -m unittest unittests.py
-        
-  
+        run: python3 -m unittest unittests
